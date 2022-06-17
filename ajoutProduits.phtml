@@ -1,0 +1,104 @@
+
+<section class="globalInfosService globalInfosContact">
+    <div class="infosContact infosService">
+        <form action="" method="post" enctype="multipart/form-data">
+                <div>                                      
+                        <input type="file" name="imageP" placeholder="Entrez une image"><br>
+                        <div>
+                        <?php if(!empty($errors['imageP'])) :?>
+                            <p class='erreur'><?= $errors['imageP']; ?></p>
+                        <?php endif; ?>
+                        </div>
+                </div>
+                
+                <div>
+                    <input type="text" name="nomp" placeholder="Entrez le nom du produit"><br>
+                    <div>
+                        <?php if(!empty($errors['nomp'])) :?>
+                            <p class='erreur'><?= $errors['nomp']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                </div>                                    
+               
+                <div>
+                    <select name="nomc" class="selectCat">
+                         <option value="------">------------</option>
+                        <?php foreach($categories as $categorie) : ?>
+                            <option value="<?= $categorie['nom'] ?>"><?= $categorie['nom'] ?></option>
+                        <?php endforeach;?>
+                    </select>
+                    <div>
+                        <?php if(!empty($errors['nomc'])) :?>
+                            <p class='erreur'><?= $errors['nomc']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div>
+                    <input type="text" name="prixUnite" placeholder="Entrez le prix "><br>
+                    <div>
+                        <?php if(!empty($errors['prixUnite'])) :?>
+                            <p class='erreur'><?= $errors['prixUnite']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div>
+                    <textarea name="descpUn" id="" cols="30" rows="10" placeholder='Entrez la description du produit'></textarea>
+                </div>
+                <div>
+                    <textarea name="descpDeux" id="" cols="30" rows="10" placeholder='Entrez la description du produit'></textarea>
+                </div>
+               
+    </div>
+       <div class="infosContact infosService">
+               
+                <div>
+                    <input type="text" name="quantestock" placeholder="Entrez la quantité "><br>
+                    <div>
+                        <?php if(!empty($errors['quantestock'])) :?>
+                            <p class='erreur'><?= $errors['quantestock']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div>
+                    <input type="text" name="charge" placeholder="Entrez la charge du produit"><br>
+                </div> 
+
+                <div>
+                    <input type="text" name="hauteurTravail" placeholder="Entrez la hauteur de travail"><br>
+                </div> 
+                <div>
+                    <input type="text" name="largeur" placeholder="Entrez la largeur"><br>
+                </div>
+
+                <div>
+                    <input type="text" name="longueur" placeholder="Entrez la longueur"><br>
+                </div>
+
+                <div>
+                    <input type="text" name="environnementTravail" placeholder="Entrez l'environnement du travail'"><br>
+                </div>
+                <div>
+                    <input type="text" name="energie" placeholder="Entrez l'energie'"><br>
+                </div>
+                
+                <div>
+                    <input type="text" name="puissance" placeholder="Entrez la puissance"><br>
+                </div>
+
+                <div>
+                    <input type="text" name="poids" placeholder="Entrez le poids"><br>
+                </div>
+                <div>
+                    <input type="text" name="ref" placeholder="Entrez la ref"><br>
+                </div>
+                <div>
+                    <?php if(!empty($succes)) :?>
+                            <p class='erreur'><?= $succes; ?></p>
+                        <?php endif; ?>
+                </div>
+                <input type="submit" value="envoyer" name="envoyer"><br>
+       </div>
+            
+                
+        </form>
+</section>
